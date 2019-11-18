@@ -1,0 +1,5 @@
+Primary keys is the main and unique way to identify a table.
+
+Foreign keys help you reference other tables' primary key.
+
+There is NO difference between left and right joins, except that they're lefted horizontally. Think of the Venn Diagram.

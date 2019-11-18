@@ -1,0 +1,51 @@
+Data Types Exercises
+
+1. What's a good use case for CHAR?
+- CHAR is faster for fixed length text (e.g. State Abbreviations, Yes/No Flags, Sex, etc.). Otherwise, you'd use VARCHAR for any other situation.
+
+2. FILL IN THE BLANKS
+	CREATE TABLE inventory (
+		item_name ___,
+		price ___,
+		quantity ___,
+	);
+
+	ANS:
+		CREATE TABLE inventory(
+			item_name VARCHAR(100),
+			price DECIMAL(5, 2), # 5 numbers total, 2 places behind the decimal
+			quantity INT,
+		);
+
+3. What's the difference between DATETIME and TIMESTAMP?
+- Both functions have different ranges of time. DATETIME has a much larger range while TIMESTAMP starts from 1970 to 2038.
+- TIMESTAMP also takes up less space and is used for meta-data when something is created or updated.
+
+4. Print out the current time.
+CURTIME()
+
+5. Print out the current date (but NOT time).
+CURDATE()
+
+6. Print out the current day of the week. (The Number)
+SELECT DATE_FORMAT(NOW(), '%w') + 1;
+
+7. Print out the current day of the week. (The Day Name)
+SELECT DATE_FORMAT(NOW(), '%W'); 
+
+8. Print out the current day and time using this format: mm/dd/yyyy
+SELECT DATE_FORMAT(NOW(), '%m/%d/%Y');
+
+9. Print out the current day and time using this format: January 2nd at 3:15, April 1st at 10:18
+SELECT DATE_FORMAT(NOW(), '%M %D at %h:%i');
+
+10. Create a tweets table that stores: the tweet content, a username, time it was created
+CREATE TABLE tweets(
+	content VARCHAR(140),
+	username VARCHAR(20),
+	created_at TIMESTAMP DEFAULT NOW()
+);
+
+INSERT INTO tweets (content, username) VALUES('i had scrambled eggs as part of my breakfast', 'supapawa');
+
+
