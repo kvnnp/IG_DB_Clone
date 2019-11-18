@@ -57,6 +57,7 @@ CREATE TABLE tags(
 	created_at TIMESTAMP DEFAULT NOW()
 );
 
+-- Phototags Schema
 CREATE TABLE photo_tags(
 	photo_id INT NOT NULL,
 	tag_id INT NOT NULL,
